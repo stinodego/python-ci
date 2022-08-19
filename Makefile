@@ -12,7 +12,7 @@ help:
 	@echo "	   Clean up .pyc files and caches"
 
 .PHONY: lint
-format:
+lint:
 	pre-commit run --all-files
 	mypy
 

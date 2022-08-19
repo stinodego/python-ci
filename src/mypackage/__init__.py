@@ -1,2 +1,1 @@
-def loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong():
-    pass
+"""This is my package."""
