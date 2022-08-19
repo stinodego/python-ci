@@ -1,0 +1,118 @@
+
+[tool.poetry]
+name = "mypackage"
+version = "0.1.0"
+description = ""
+authors = ["Stijn de Gooijer <stijn@degooijer.io>"]
+repository = "https://github.com/stinodego/python-cookiecutter"
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "mypackage", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.1.2"
+pytest-mock = "^3.8.2"
+coverage = {extras = ["toml"], version = "^6.4.4"}
+
+[tool.poetry.group.mypy.dependencies]
+mypy = "^0.971"
+
+[tool.poetry.group.precommit.dependencies]
+pre-commit = "^2.20.0"
+
+[tool.poetry.group.lint]
+optional = true
+[tool.poetry.group.lint.dependencies]
+black = "^22.6.0"
+isort = "^5.10.1"
+flake8 = "^5.0.4"
+flake8-bugbear = "^22.7.1"
+flake8-docstrings = "^1.6.0"
+flake8-simplify = "^0.19.3"
+flake8-pyproject = "^1.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+# [tool.poetry]
+# name = "mypackage"
+# version = "0.1.0"
+# description = "Project description."
+# authors = ["Stijn de Gooijer <stijn@degooijer.io>"]
+# repository = "https://github.com/stinodego/python-cookiecutter"
+# packages = [
+#     { include = "mypackage", from = "src" }
+# ]
+
+# [tool.poetry.dependencies]
+# python = "^3.10"
+
+# [tool.poetry.dev-dependencies]
+# pre-commit = "^2.19.0"
+# pytest = "^7.1.2"
+# pytest-mock = "^3.8.1"
+# coverage = {extras = ["toml"], version = "^6.4.3"}
+# mypy = "^0.971"
+
+# [tool.poetry.scripts]
+# mbb = 'mypackage.main:main'
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+line_length = 88
+profile = "black"
+
+[tool.mypy]
+files = ["src", "tests"]
+python_version = "3.10"
+namespace_packages = true
+show_error_codes = true
+strict = true
+enable_error_code = [
+  "redundant-expr",
+  "truthy-bool",
+  "ignore-without-code",
+]
+
+[tool.flake8]
+max-line-length = 88
+count = true
+ban-relative-imports = true
+docstring-convention = "google"
+extend-ignore = [
+    # Comply with black
+    "E203",
+]
+per-file-ignores = [
+    "tests/*.py: D1"
+]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+omit = ['src/mbb/cli.py']
+
+[tool.coverage.report]
+skip_covered = true
+show_missing = true
+exclude_lines = [
+    "if __name__ == .__main__.:",
+    "pragma: no cover",
+]

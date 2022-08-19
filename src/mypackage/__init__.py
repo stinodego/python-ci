@@ -1,0 +1,2 @@
+def loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong():
+    pass
