@@ -53,6 +53,7 @@ target-version = ["py310"]
 [tool.isort]
 line_length = 88
 profile = "black"
+force_single_line = true
 
 
 [tool.mypy]
@@ -72,13 +73,6 @@ module = ["tests.*"]
 disallow_untyped_defs = false
 
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-filterwarnings = [
-    "ignore::DeprecationWarning",
-]
-
-
 [tool.coverage.run]
 source = ["src"]
 branch = true
@@ -88,7 +82,6 @@ skip_covered = true
 show_missing = true
 exclude_lines = [
     "pragma: no cover",
-    "if __name__ == .__main__.:",
     "if TYPE_CHECKING:",
-    "@overload",
+    "if __name__ == .__main__.:",
 ]
