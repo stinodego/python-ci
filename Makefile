@@ -1,15 +1,15 @@
 .DEFAULT: help
 help:
 	@echo "make lint"
-	@echo "	   run pre-commit"
+	@echo "	   Run lints"
 	@echo "make test"
-	@echo "	   run tests"
+	@echo "	   Run tests"
 	@echo "make coverage"
-	@echo "	   run tests and coverage"
+	@echo "	   Run tests and coverage"
 	@echo "make build"
-	@echo "	   build Python wheel"
+	@echo "	   Build Python wheel"
 	@echo "make clean"
-	@echo "	   clean up pyc and caches"
+	@echo "	   Clean up .pyc files and caches"
 
 .PHONY: lint
 format:
