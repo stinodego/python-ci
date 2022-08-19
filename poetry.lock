@@ -162,21 +162,6 @@ flake8 = ">=3"
 pydocstyle = ">=2.1"
 
 [[package]]
-name = "flake8-pyproject"
-version = "1.1.0.post0"
-description = "Flake8 plug-in loading the configuration from pyproject.toml"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-Flake8 = ">=5,<6"
-TOMLi = {version = "*", markers = "python_version < \"3.11\""}
-
-[package.extras]
-test = ["pytest", "pytest-cov"]
-
-[[package]]
 name = "flake8-simplify"
 version = "0.19.3"
 description = "flake8 plugin which checks for code that can be simplified"
@@ -493,7 +478,7 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "e27c36625f5885f6d554a6dd45377be67e798bc1c62a06e726c080c836bb9ae4"
+content-hash = "11f8210e6e6a38ab23a40a73c76d14cf788c7da23f6393fc02e98c94b1dfff6d"
 
 [metadata.files]
 astor = [
@@ -619,9 +604,6 @@ flake8-comprehensions = [
 flake8-docstrings = [
     {file = "flake8-docstrings-1.6.0.tar.gz", hash = "sha256:9fe7c6a306064af8e62a055c2f61e9eb1da55f84bb39caef2b84ce53708ac34b"},
     {file = "flake8_docstrings-1.6.0-py2.py3-none-any.whl", hash = "sha256:99cac583d6c7e32dd28bbfbef120a7c0d1b6dde4adb5a9fd441c4227a6534bde"},
-]
-flake8-pyproject = [
-    {file = "flake8_pyproject-1.1.0.post0-py3-none-any.whl", hash = "sha256:55bc7cbb4272dca45ba42521954452be9d443237fa9b78a09d0424bbd5c94fab"},
 ]
 flake8-simplify = [
     {file = "flake8_simplify-0.19.3-py3-none-any.whl", hash = "sha256:1057320e9312d75849541fee822900d27bcad05b2405edc84713affee635629e"},

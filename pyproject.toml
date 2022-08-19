@@ -11,6 +11,9 @@ packages = [
     { include = "mypackage", from = "src" }
 ]
 
+[tool.poetry.scripts]
+mycli = 'mypackage.main:main'
+
 [tool.poetry.dependencies]
 python = "^3.10"
 
@@ -34,7 +37,6 @@ flake8 = "^5.0.4"
 flake8-bugbear = "^22.7.1"
 flake8-comprehensions = "^3.10.0"
 flake8-docstrings = "^1.6.0"
-flake8-pyproject = "^1.1.0"
 flake8-simplify = "^0.19.3"
 flake8-tidy-imports = "^4.8.0"
 
@@ -68,19 +70,6 @@ enable_error_code = [
 [[tool.mypy.overrides]]
 module = ["tests.*"]
 disallow_untyped_defs = false
-
-
-[tool.flake8]
-max-line-length = 88
-count = true
-ban-relative-imports = true
-docstring-convention = "google"
-extend-ignore = [
-    "E203",  # Comply with black
-]
-per-file-ignores = [
-    "tests/*.py: D1"
-]
 
 
 [tool.pytest.ini_options]

@@ -1,0 +1,10 @@
+[flake8]
+max-line-length = 88
+ban-relative-imports = true
+docstring-convention = google
+extend-ignore =
+    # Comply with black
+    E203,
+per-file-ignores =
+    # No docstrings required for tests
+    tests/*: D1
