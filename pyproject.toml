@@ -25,7 +25,7 @@ coverage = {extras = ["toml"], version = "^6.4.4"}
 [tool.poetry.group.mypy.dependencies]
 mypy = "^0.971"
 
-[tool.poetry.group.precommit.dependencies]
+[tool.poetry.group.pre-commit.dependencies]
 pre-commit = "^2.20.0"
 
 [tool.poetry.group.lint]
