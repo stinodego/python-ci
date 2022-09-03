@@ -1,37 +1,28 @@
-.DEFAULT: help
-help:
-	@echo "make lint"
-	@echo "	   Run lints"
-	@echo "make test"
-	@echo "	   Run tests"
-	@echo "make coverage"
-	@echo "	   Run tests and coverage"
-	@echo "make build"
-	@echo "	   Build Python wheel"
-	@echo "make clean"
-	@echo "	   Clean up .pyc files and caches"
+.DEFAULT_GOAL := help
 
 .PHONY: lint
-lint:
+lint:  ## Run autoformatting and linting
 	pre-commit run --all-files
 	mypy
 
 .PHONY: test
-test:
-	pytest
+test:  ## Run tests
+	@pytest
 
 .PHONY: coverage
-coverage:
-	coverage run -m pytest && coverage report
-
-.PHONY: build
-build:
-	poetry build --format wheel
+coverage:  ## Run tests and report coverage
+	@coverage run -m pytest
+	@coverage report
 
 .PHONY: clean
-clean:
-	@rm -rf ./.pytest_cache/
-	@rm -rf ./.mypy_cache/
-	@rm -rf ./.coverage
-	@rm -rf ./dist/
-	@find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
+clean:  ## Clean up caches and build artifacts
+	@rm -rf dist/
+	@rm -rf .pytest_cache/
+	@rm -rf .mypy_cache/
+	@rm -f .coverage
+	@find -type f -name '*.py[co]' -delete -or -type d -name __pycache__ -delete
+
+.PHONY: help
+help:  ## Display this help screen
+	@echo -e '\033[1mAvailable commands:\033[0m'
+	@grep -E '^[a-z.A-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-18s\033[0m %s\n", $$1, $$2}'
