@@ -5,7 +5,6 @@ version = "0.1.0"
 description = ""
 authors = ["Stijn de Gooijer <stijn@degooijer.io>"]
 repository = "https://github.com/stinodego/python-cookiecutter"
-license = "MIT"
 readme = "README.md"
 packages = [
     { include = "mypackage", from = "src" }
