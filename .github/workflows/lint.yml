@@ -1,0 +1,34 @@
+name: Lint
+
+on: pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: '3.10'
+  PRECOMMIT_VERSION: '2.20.0'
+
+jobs:
+  linting:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Configure Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Cache pre-commit
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: ${{ runner.os }}-precommit-${{ hashFiles('.pre-commit-config.yaml') }}
+
+      - name: Install pre-commit
+        run: pip install pre-commit==${{ env.PRECOMMIT_VERSION }}
+
+      - name: Check linting
+        run: pre-commit run --all-files

@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 
-.PHONY: lint
-lint:  ## Run autoformatting and linting
+.PHONY: fmt
+fmt:  ## Run autoformatting and linting
 	pre-commit run --all-files
 	mypy
 
