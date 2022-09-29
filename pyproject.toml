@@ -19,7 +19,7 @@ polars = "^0.14.14"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.1.2"
-pytest-mock = "^3.8.2"
+pytest-mock = "3.7.0"
 coverage = {extras = ["toml"], version = "^6.4.4"}
 
 [tool.poetry.group.mypy.dependencies]
