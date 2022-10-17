@@ -37,10 +37,10 @@ jobs:
 
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-root --without pre-commit
+        run: poetry install --no-root --only main,test,mypy
 
       - name: Install library
-        run: poetry install --without pre-commit
+        run: poetry install --only main,test,mypy
 
       - name: Run mypy
         run: poetry run mypy
