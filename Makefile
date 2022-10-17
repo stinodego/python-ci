@@ -16,7 +16,6 @@ coverage:  ## Run tests and report coverage
 
 .PHONY: clean
 clean:  ## Clean up caches and build artifacts
-	@rm -rf dist/
 	@rm -rf .pytest_cache/
 	@rm -rf .mypy_cache/
 	@rm -f .coverage

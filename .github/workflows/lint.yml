@@ -11,7 +11,7 @@ env:
   PRECOMMIT_VERSION: '2.20.0'
 
 jobs:
-  linting:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -30,5 +30,5 @@ jobs:
       - name: Install pre-commit
         run: pip install pre-commit==${{ env.PRECOMMIT_VERSION }}
 
-      - name: Check linting
+      - name: Run pre-commit
         run: pre-commit run --all-files
