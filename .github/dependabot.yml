@@ -8,12 +8,8 @@ updates:
     ignore:
       - dependency-name: '*'
         update-types: ['version-update:semver-patch']
-    reviewers: [stinodego]
-    assignees: [stinodego]
 
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
       interval: weekly
-    reviewers: [stinodego]
-    assignees: [stinodego]
