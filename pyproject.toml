@@ -72,6 +72,12 @@ module = ["tests.*"]
 disallow_untyped_defs = false
 
 
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+
+
 [tool.coverage.run]
 source = ["src"]
 branch = true
