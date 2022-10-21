@@ -1,6 +1,6 @@
 # Standard Python project CI setup
 
-There are many choices you can make in setting up continuous integration for your Python project. This is my personal flavour of doing things. Feel free to pick-and-choose the parts that you like.
+There are many ways to set up continuous integration for your Python project. This is my personal flavour of doing things. Feel free to pick-and-choose the parts that you like.
 
 This README includes some justification and references for the choices made in this setup.
 
