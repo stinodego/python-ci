@@ -1,6 +1,24 @@
-# python-cookiecutter
+# Standard Python project CI setup
 
-Example Python project with formatting / linting / etc. settings.
+There are many choices you can make in setting up continuous integration for your Python project. This is my personal flavour of doing things. Feel free to pick-and-choose the parts that you like.
+
+This README includes some justification and references for the choices made in this setup.
+
+## Table of contents
+- [pre-commit](#pre-commit)
+- [poetry](#poetry)
+- [pytest](#pytest)
+- [GitHub Actions](#github-actions)
+- [Makefile](#makefile)
+
+
+## pre-commit
+
+[pre-commit](https://pre-commit.com/) is an awesome tool, which is the standard many Python projects use.
+
+
+
+## poetry
 
 Local install (include linting dependencies for your IDE):
 
@@ -8,30 +26,16 @@ Local install (include linting dependencies for your IDE):
 poetry install --with lint
 ```
 
+## pytest
 
-CI testing:
+The best testing framework.
 
-```shell
-poetry install --only main,test,mypy
-```
-
-
-Docker steps:
-
-First
-
-```shell
-poetry install --only main --no-root
-```
-
-Then
-
-```shell
-poetry install --only main
-```
-
-## CI
+## GitHub Actions
 
 For public repos, use the official hook instead: https://pre-commit.ci/
 
 Make sure to add your core dependencies to the mypy `additional_dependencies` arg.
+
+## Makefile
+
+Just some nice scripts.
