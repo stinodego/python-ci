@@ -8,12 +8,6 @@ Local install (include linting dependencies for your IDE):
 poetry install --with lint
 ```
 
-CI linting:
-
-```shell
-poetry install --only pre-commit --no-root
-```
-
 
 CI testing:
 
@@ -35,3 +29,9 @@ Then
 ```shell
 poetry install --only main
 ```
+
+## CI
+
+For public repos, use the official hook instead: https://pre-commit.ci/
+
+Make sure to add your core dependencies to the mypy `additional_dependencies` arg.

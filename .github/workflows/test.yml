@@ -37,13 +37,10 @@ jobs:
 
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-root --only main,test,mypy
+        run: poetry install --no-root --only main,test
 
       - name: Install library
-        run: poetry install --only main,test,mypy
-
-      - name: Run mypy
-        run: poetry run mypy
+        run: poetry install --only main,test
 
       - name: Run tests and generate coverage report
         run: poetry run make coverage

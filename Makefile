@@ -2,8 +2,7 @@
 
 .PHONY: fmt
 fmt:  ## Run autoformatting and linting
-	pre-commit run --all-files
-	mypy
+	@pre-commit run --all-files
 
 .PHONY: test
 test:  ## Run tests
