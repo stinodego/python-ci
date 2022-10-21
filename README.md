@@ -6,7 +6,7 @@ This README includes some justification and references for the choices made in t
 
 ## Table of contents
 - [pre-commit](#pre-commit)
-- [poetry](#poetry)
+- [Poetry](#poetry)
 - [pytest](#pytest)
 - [GitHub Actions](#github-actions)
 - [Makefile](#makefile)
@@ -19,19 +19,23 @@ This README includes some justification and references for the choices made in t
 
 Make sure to add your core dependencies to the mypy `additional_dependencies` arg.
 
-## poetry
 
-Local install (include linting dependencies for your IDE):
+## Poetry
 
-```shell
-poetry install --with lint
-```
+[Poetry](https://python-poetry.org/) is an amazing, modern tool for developing Python packages. See my [Poetry guide](https://github.com/stinodego/poetry-guide) for pointers on using Poetry effectively.
+
+Note that the dependency specification for this repository contains three [dependency groups](https://python-poetry.org/docs/master/managing-dependencies/):
+
+* test: Includes all testing dependencies.
+* pre-commit: Only includes the `pre-commit` package. Having this in a separate dependency groups means we can exclude it when setting up the testing environment in the CI.
+* lint: An optional group with linting dependencies. This can be useful to help your IDE do autoformatting or show in-line linting errors. Install these by running `poetry install --with lint`
+
 
 ## pytest
 
 [pytest](https://docs.pytest.org/) is without question the best Python testing framework out there. Tests written in this framework are much more readable than when using Python's built-in `unittest` framework.
 
-pytest is extensible. I advise using [`pytest-mock`](https://pytest-mock.readthedocs.io/) for your mocking needs. [`pytest-spark`](https://github.com/malexer/pytest-spark) is useful if you're working with pyspark.
+pytest is extensible. I advise using [`pytest-mock`](https://pytest-mock.readthedocs.io/) for your mocking needs. [`pytest-spark`](https://github.com/malexer/pytest-spark) is useful when you're working with pyspark.
 
 
 ## GitHub Actions
