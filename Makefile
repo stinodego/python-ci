@@ -2,23 +2,23 @@
 
 .PHONY: fmt
 fmt:  ## Run autoformatting and linting
-	@pre-commit run --all-files
+	@poetry run pre-commit run --all-files
 
 .PHONY: test
 test:  ## Run tests
-	@pytest
+	@poetry run pytest
 
 .PHONY: coverage
 coverage:  ## Run tests and report coverage
-	@coverage run -m pytest
-	@coverage report
+	@poetry run coverage run -m pytest
+	@poetry run coverage report
 
 .PHONY: clean
 clean:  ## Clean up caches and build artifacts
 	@rm -rf .pytest_cache/
 	@rm -rf .mypy_cache/
 	@rm -f .coverage
-	@find -type f -name '*.py[co]' -delete -or -type d -name __pycache__ -delete
+	@find . -type f -name '*.py[co]' -delete -or -type d -name __pycache__ -delete
 
 .PHONY: help
 help:  ## Display this help screen
