@@ -15,8 +15,8 @@ coverage:  ## Run tests and report coverage
 
 .PHONY: clean
 clean:  ## Clean up caches and build artifacts
-	@rm -rf .pytest_cache/
 	@rm -rf .mypy_cache/
+	@rm -rf .pytest_cache/
 	@rm -f .coverage
 	@find . -type f -name '*.py[co]' -delete -or -type d -name __pycache__ -delete
 
