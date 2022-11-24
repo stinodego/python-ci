@@ -41,20 +41,18 @@ mypy = "^0.982"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-
 [tool.black]
 line_length = 88
 target_version = ["py310"]
-
 
 [tool.isort]
 line_length = 88
 profile = "black"
 force_single_line = true
 
-
 [tool.mypy]
-files = ["src", "tests"]
+files = "src"
+mypy_path = "src"
 python_version = "3.10"
 namespace_packages = true
 show_error_codes = true
@@ -65,16 +63,10 @@ enable_error_code = [
   "ignore-without-code",
 ]
 
-[[tool.mypy.overrides]]
-module = ["tests.*"]
-disallow_untyped_defs = false
-
-
 [tool.pytest.ini_options]
 addopts = [
     "--import-mode=importlib",
 ]
-
 
 [tool.coverage.run]
 source = ["src"]

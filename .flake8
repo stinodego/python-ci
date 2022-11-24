@@ -4,9 +4,6 @@ ban-relative-imports = true
 docstring-convention = google
 extend-ignore =
     # Comply with black
-    E203,
-    # No docstrings required for modules and packages
-    D100, D104,
-per-file-ignores =
-    # No docstrings required for tests
-    tests/*: D1
+    E203
+    # Docstrings not required
+    D1
