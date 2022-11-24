@@ -27,7 +27,7 @@ pre-commit = "^2.20.0"
 [tool.poetry.group.lint]
 optional = true
 [tool.poetry.group.lint.dependencies]
-black = "^22.6.0"
+black = "^22.10.0"
 isort = "^5.10.1"
 flake8 = "^5.0.4"
 flake8-bugbear = "^22.7.1"
@@ -35,7 +35,7 @@ flake8-comprehensions = "^3.10.0"
 flake8-docstrings = "^1.6.0"
 flake8-simplify = "^0.19.3"
 flake8-tidy-imports = "^4.8.0"
-mypy = "^0.982"
+mypy = "^0.991"
 
 [build-system]
 requires = ["poetry-core"]
