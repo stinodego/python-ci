@@ -43,4 +43,4 @@ jobs:
         run: poetry install --only main,test
 
       - name: Run tests and generate coverage report
-        run: poetry run make coverage
+        run: make coverage
