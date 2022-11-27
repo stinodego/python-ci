@@ -1,7 +1,8 @@
 [flake8]
-max-line-length = 88
-ban-relative-imports = true
+max-line-length = 120
+max-doc-length = 88
 docstring-convention = google
+ban-relative-imports = true
 extend-ignore =
     # Comply with black
     E203
