@@ -13,7 +13,7 @@ packages = [
 mycli = 'mypackage.main:main'
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 polars = "^0.15.2"
 
 [tool.poetry.group.test.dependencies]
@@ -43,7 +43,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line_length = 88
-target_version = ["py310"]
+target_version = ["py311"]
 
 [tool.isort]
 line_length = 88
@@ -53,9 +53,7 @@ force_single_line = true
 [tool.mypy]
 files = "src"
 mypy_path = "src"
-python_version = "3.10"
-namespace_packages = true
-show_error_codes = true
+python_version = "3.11"
 strict = true
 enable_error_code = [
   "redundant-expr",
