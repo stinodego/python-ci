@@ -28,7 +28,7 @@ pre-commit = "^2.20.0"
 optional = true
 [tool.poetry.group.lint.dependencies]
 black = "^22.10.0"
-ruff = "^0.0.206"
+ruff = "^0.0.208"
 mypy = "^0.991"
 
 [build-system]
@@ -48,7 +48,6 @@ select = [
     "F",  # Pyflakes
     "E", "W", # pycodestyle
     "I",  # isort
-    "D",  # pydocstyle
     "UP",  # pyupgrade
     "S",  # flake8-bandit
     "B",  # flake8-bugbear
@@ -58,9 +57,6 @@ select = [
     "RUF",  # Ruff-specific rules
 ]
 ignore = [
-    # Google docstring convention
-    "D203", "D204", "D213", "D215",
-    "D400", "D404", "D406", "D407", "D408", "D409", "D413",
     # Docstrings not required
     "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107"
 ]
