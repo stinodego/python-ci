@@ -58,7 +58,7 @@ select = [
 ]
 ignore = [
     # Docstrings not required
-    "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107"
+    "D1"
 ]
 
 [tool.ruff.per-file-ignores]
