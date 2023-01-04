@@ -14,7 +14,7 @@ repos:
       - id: black
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.208
+    rev: v0.0.210
     hooks:
       - id: ruff
         args: ["--force-exclude"]

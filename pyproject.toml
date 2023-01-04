@@ -28,7 +28,7 @@ pre-commit = "^2.20.0"
 optional = true
 [tool.poetry.group.lint.dependencies]
 black = "^22.10.0"
-ruff = "^0.0.208"
+ruff = "^0.0.210"
 mypy = "^0.991"
 
 [build-system]
@@ -48,6 +48,7 @@ select = [
     "F",  # Pyflakes
     "E", "W", # pycodestyle
     "I",  # isort
+    "D",  # pydocstyle
     "UP",  # pyupgrade
     "S",  # flake8-bandit
     "B",  # flake8-bugbear
