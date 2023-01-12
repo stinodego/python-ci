@@ -24,11 +24,9 @@ coverage = "^6.5.0"
 [tool.poetry.group.pre-commit.dependencies]
 pre-commit = "^2.20.0"
 
-[tool.poetry.group.lint]
-optional = true
 [tool.poetry.group.lint.dependencies]
 black = "^22.10.0"
-ruff = "^0.0.210"
+ruff = "^0.0.219"
 mypy = "^0.991"
 
 [build-system]
@@ -58,12 +56,17 @@ select = [
     "RUF",  # Ruff-specific rules
 ]
 ignore = [
+    # Line length regulated by black
+    "E501",
     # Docstrings not required
-    "D1"
+    "D1",
 ]
 
 [tool.ruff.per-file-ignores]
 "tests/*" = ["S101"]
+
+[tool.ruff.pycodestyle]
+max-doc-length = 88
 
 [tool.ruff.isort]
 force-single-line = true
