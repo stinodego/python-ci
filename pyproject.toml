@@ -44,7 +44,7 @@ target-version = "py311"
 fix = true
 select = [
     "F",  # Pyflakes
-    "E", "W", # pycodestyle
+    "E", "W",  # pycodestyle
     "I",  # isort
     "D",  # pydocstyle
     "UP",  # pyupgrade
