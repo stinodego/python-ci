@@ -17,17 +17,15 @@ python = "^3.11"
 polars = "^0.16.1"
 
 [tool.poetry.group.test.dependencies]
-pytest = "^7.1.2"
-pytest-mock = "^3.7.0"
-coverage = "^6.5.0"
-
-[tool.poetry.group.pre-commit.dependencies]
-pre-commit = "^2.20.0"
+pytest = "^7.2.1"
+pytest-mock = "^3.10.0"
+coverage = "^7.1.0"
 
 [tool.poetry.group.lint.dependencies]
-black = "^22.12.0"
-ruff = "^0.0.219"
-mypy = "^0.991"
+pre-commit = "^3.0.4"
+black = "^23.1.0"
+ruff = "^0.0.244"
+mypy = "^1.0.0"
 
 [build-system]
 requires = ["poetry-core"]
