@@ -21,7 +21,7 @@ Run `pre-commit install` after setting up your local environment to enable pre-c
 The following hooks have been selected for this CI setup:
 
 * [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks): Some generic hooks not specific to Python.
-* [black](https://black.readthedocs.io/): The most popular autoformatter for Python. Note that the line length defaults to 88, which can be a [point of contention](https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#line-length) - adjust it in the `pyproject.toml` as desired. Don't forget to also update the `isort` and `ruff` settings to match.
+* [black](https://black.readthedocs.io/): The most popular autoformatter for Python. Note that the line length defaults to 88, which can be a [point of contention](https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#line-length) - adjust it in the `pyproject.toml` as desired. Don't forget to also update the `ruff` settings to match.
 * [ruff](https://github.com/charliermarsh/ruff/): An extremely fast Python linter. Includes lints popularized by various other tools like `flake8` and `pyupgrade`, all in one tool. Replaces all linting and autoformatting tools except for `black` and `mypy`. Install the [VSCode](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) or [PyCharm](https://plugins.jetbrains.com/plugin/20574-ruff) extension for the best developer experience.
 * [mypy](https://mypy.readthedocs.io/): mypy is a static type checker for Python. One of the best things you can do for your code base is add type hints and be consistent with them. In this repo, mypy is configured with [all strictness options](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict) enabled. Note that for mypy to work correctly as a pre-commit hook, **you must define your main dependencies as `additional_dependencies` in the pre-commit hook**. If you have many dependencies, it may be better to remove the mypy pre-commit hook and run mypy alongside your tests.
 
@@ -50,12 +50,12 @@ Simply run `make` to get an overview of available commands.
 
 [Poetry](https://python-poetry.org/) is an amazing, modern tool for developing Python packages. See my [Poetry guide](https://github.com/stinodego/poetry-guide) for pointers on using Poetry effectively.
 
-Note that the dependency specification for this repository contains three [dependency groups](https://python-poetry.org/docs/master/managing-dependencies/):
+Note that the dependency specification for this repository contains two [dependency groups](https://python-poetry.org/docs/master/managing-dependencies/):
 
 * `test`: Includes all testing dependencies.
-* `pre-commit`: Only includes the `pre-commit` package. Having this in a separate dependency groups means we can exclude it when setting up the testing environment in the CI.
-* `lint`: An optional group with linting dependencies. This can be useful to help your IDE do autoformatting or show in-line linting errors. Install these by running `poetry install --with lint`
+* `lint`: Includes all linting dependencies. This can be useful to help your IDE do autoformatting or show in-line linting errors.
 
+Having these development dependencies in separate groups makes it easy to install only the required dependencies in the CI workflows.
 
 ## GitHub Actions
 
