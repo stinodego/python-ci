@@ -24,8 +24,8 @@ coverage = "^7.1.0"
 [tool.poetry.group.lint.dependencies]
 pre-commit = "^3.0.4"
 black = "^23.1.0"
-ruff = "^0.0.244"
-mypy = "^1.0.0"
+ruff = "^0.0.247"
+mypy = "^1.0.1"
 
 [build-system]
 requires = ["poetry-core"]
