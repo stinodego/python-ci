@@ -19,7 +19,7 @@ polars = "^0.16.1"
 [tool.poetry.group.test.dependencies]
 pytest = "^7.2.1"
 pytest-mock = "^3.10.0"
-coverage = "^7.1.0"
+coverage = "^7.2.1"
 
 [tool.poetry.group.lint.dependencies]
 pre-commit = "^3.0.4"
