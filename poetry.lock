@@ -356,31 +356,33 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "polars"
-version = "0.16.7"
+version = "0.17.1"
 description = "Blazingly fast DataFrame library"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "polars-0.16.7-cp37-abi3-macosx_10_7_x86_64.whl", hash = "sha256:89e2d91f4e2425ee95d483e3024b28cf9cbc908887bb821c79c223a696a589e7"},
-    {file = "polars-0.16.7-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:0409e0dab3917bac13509634c273987101a490be94a1d3895d21ff0e149701f2"},
-    {file = "polars-0.16.7-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:6abdc2a0bf522026f4303612f91e5c3d8af8ee22ae4ff10cf186ceb511a33b4a"},
-    {file = "polars-0.16.7-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2106f522dec88ec552a3f981b1ad3bb304c8537152ea62f576c8ea67999d1e83"},
-    {file = "polars-0.16.7-cp37-abi3-win_amd64.whl", hash = "sha256:3a8410bebc24b2fc0b9c7de7d4a020e6d49434c9f0a09e83adfa952e9dc66c75"},
-    {file = "polars-0.16.7.tar.gz", hash = "sha256:1a17b104d5b1d0248290ef0fb1e8bfa2fbc9ac0a4298b459d7bff6cb87182a89"},
+    {file = "polars-0.17.1-cp37-abi3-macosx_10_7_x86_64.whl", hash = "sha256:86d4b49fc48309c952e5c704878e12b82f38d495e4876556adc4ddf7df5e8bf8"},
+    {file = "polars-0.17.1-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:4fe55d6b83e8f332f405b1a972dbde16139fcad52aaf8bf0723e4a283dbb104a"},
+    {file = "polars-0.17.1-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:99b0c571e5bc89003ad1faaa1fbf6746ab1e21d52c53c422338d92c928366f09"},
+    {file = "polars-0.17.1-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:565fd448a76149af1a431a8111f13b7f9b092255022ffb6dfaf08302cbb02ccd"},
+    {file = "polars-0.17.1-cp37-abi3-win_amd64.whl", hash = "sha256:8a26ab15b5db8043dcbd15034a3ddab1f4e11181738ee880467e1382e935abe7"},
+    {file = "polars-0.17.1.tar.gz", hash = "sha256:d2228791859ed1e96ba44d162723801e6842686f389c1ebac675165910ed108c"},
 ]
 
 [package.extras]
-all = ["polars[connectorx,deltalake,fsspec,matplotlib,numpy,pandas,pyarrow,timezone,xlsx2csv]"]
+all = ["polars[connectorx,deltalake,fsspec,matplotlib,numpy,pandas,pyarrow,sqlalchemy,timezone,xlsx2csv,xlsxwriter]"]
 connectorx = ["connectorx"]
-deltalake = ["deltalake (>=0.6.2)"]
+deltalake = ["deltalake (>=0.8.0)"]
 fsspec = ["fsspec"]
 matplotlib = ["matplotlib"]
 numpy = ["numpy (>=1.16.0)"]
-pandas = ["pandas", "pyarrow (>=4.0.0)"]
-pyarrow = ["pyarrow (>=4.0.0)"]
+pandas = ["pandas", "pyarrow (>=7.0.0)"]
+pyarrow = ["pyarrow (>=7.0.0)"]
+sqlalchemy = ["pandas", "sqlalchemy"]
 timezone = ["backports.zoneinfo", "tzdata"]
 xlsx2csv = ["xlsx2csv (>=0.8.0)"]
+xlsxwriter = ["xlsxwriter"]
 
 [[package]]
 name = "pre-commit"
@@ -571,4 +573,4 @@ test = ["covdefaults (>=2.2.2)", "coverage (>=7.1)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "53f4fac620a504e82433f6af0a65112b6d324fcac590efc88a2e17e12f479afb"
+content-hash = "2cb62cba9b4736d7329bc63e6377e5bd1961a14a6b5c0562ac4f195377e60441"
