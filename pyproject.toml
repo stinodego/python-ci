@@ -14,18 +14,18 @@ mycli = 'mypackage.main:main'
 
 [tool.poetry.dependencies]
 python = "^3.11"
-polars = "^0.16.1"
+polars = "^0.17.5"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.3.1"
 pytest-mock = "^3.10.0"
-coverage = "^7.2.1"
+coverage = "^7.2.3"
 
 [tool.poetry.group.lint.dependencies]
-pre-commit = "^3.1.1"
-black = "^23.1.0"
-ruff = "^0.0.247"
-mypy = "^1.1.1"
+pre-commit = "^3.2.2"
+black = "^23.3.0"
+ruff = "^0.0.261"
+mypy = "^1.2.0"
 
 [build-system]
 requires = ["poetry-core"]
