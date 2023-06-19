@@ -18,7 +18,7 @@ polars = "^0.17.5"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.3.1"
-pytest-mock = "^3.10.0"
+pytest-mock = "^3.11.1"
 coverage = "^7.2.3"
 
 [tool.poetry.group.lint.dependencies]
