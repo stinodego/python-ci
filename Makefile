@@ -19,6 +19,8 @@ coverage:  ## Run tests and report coverage
 clean:  ## Clean up caches and build artifacts
 	@rm -rf .mypy_cache/
 	@rm -rf .pytest_cache/
+	@rm -rf .ruff_cache/
+	@rm -rf .venv/
 	@rm -f .coverage
 	@find . -type f -name '*.py[co]' -delete -or -type d -name __pycache__ -delete
 
