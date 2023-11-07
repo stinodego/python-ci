@@ -11,27 +11,22 @@ packages = [{ include = "mypackage", from = "src" }]
 mycli = 'mypackage.main:main'
 
 [tool.poetry.dependencies]
-python = "^3.11"
-polars = "^0.17.5"
+python = ">=3.11"
+polars = "^0.19.12"
 
 [tool.poetry.group.test.dependencies]
-pytest = "^7.4.0"
-pytest-mock = "^3.11.1"
-coverage = "^7.2.7"
+pytest = "^7.4.3"
+pytest-mock = "^3.12.0"
+coverage = "^7.3.2"
 
 [tool.poetry.group.lint.dependencies]
-pre-commit = "^3.2.2"
-black = "^23.3.0"
-ruff = "^0.0.275"
-mypy = "^1.4.1"
+pre-commit = "^3.5.0"
+ruff = "^0.1.4"
+mypy = "^1.6.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.black]
-line-length = 88
-target-version = ["py311"]
 
 [tool.ruff]
 src = ["src"]
@@ -52,7 +47,7 @@ select = [
   "RUF",  # Ruff-specific rules
 ]
 ignore = [
-  # Line length regulated by black
+  # Line length regulated by ruff formatter
   "E501",
   # Docstrings not required
   "D1",
