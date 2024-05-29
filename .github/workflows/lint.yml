@@ -21,14 +21,14 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
+      - name: Install pre-commit
+        run: pip install pre-commit==${{ env.PRECOMMIT_VERSION }}
+
       - name: Cache pre-commit
         uses: actions/cache@v4
         with:
           path: ~/.cache/pre-commit
           key: precommit-${{ hashFiles('.pre-commit-config.yaml') }}
 
-      - name: Install pre-commit
-        run: pip install pre-commit==${{ env.PRECOMMIT_VERSION }}
-
       - name: Run pre-commit
-        run: pre-commit run --all-files
+        run: pre-commit run --all-files --color=always
