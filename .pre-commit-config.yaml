@@ -8,16 +8,22 @@ repos:
       - id: check-yaml
       - id: check-json
 
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.41.0
+    hooks:
+      - id: markdownlint-fix
+
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.1.4
+    rev: v0.4.6
     hooks:
       - id: ruff
+        types_or: [python, pyi]
       - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.6.1
+    rev: v1.10.0
     hooks:
       - id: mypy
         args: []
         pass_filenames: false
-        additional_dependencies: []
+        additional_dependencies: []  # Manually add your dependencies here

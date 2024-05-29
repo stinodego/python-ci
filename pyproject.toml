@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "mypackage"
 version = "0.1.0"
@@ -12,30 +16,29 @@ mycli = 'mypackage.main:main'
 
 [tool.poetry.dependencies]
 python = ">=3.11"
-polars = "^0.19.12"
+polars = "^0.20.30"
 
 [tool.poetry.group.test.dependencies]
-pytest = "^7.4.3"
-pytest-mock = "^3.12.0"
-coverage = "^7.3.2"
+pytest = "^8.2.1"
+pytest-mock = "^3.14.0"
+coverage = "^7.5.3"
 
 [tool.poetry.group.lint.dependencies]
-pre-commit = "^3.5.0"
-ruff = "^0.1.4"
-mypy = "^1.6.1"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+pre-commit = "^3.7.1"
+ruff = "^0.4.6"
+mypy = "^1.10.0"
 
 [tool.ruff]
 src = ["src"]
 line-length = 88
 target-version = "py311"
 fix = true
+
+[tool.ruff.lint]
 select = [
   "F",  # Pyflakes
-  "E", "W",  # pycodestyle
+  "E",   # pycodestyle
+  "W",  # pycodestyle
   "I",  # isort
   "D",  # pydocstyle
   "UP",  # pyupgrade

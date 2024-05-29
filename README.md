@@ -5,12 +5,12 @@ There are many ways to set up continuous integration for your Python project. Th
 This README includes some justification and references for the choices made in this setup.
 
 ## Table of contents
+
 - [pre-commit](#pre-commit)
 - [pytest](#pytest)
 - [Makefile](#makefile)
 - [Poetry](#poetry)
 - [GitHub Actions](#github-actions)
-
 
 ## pre-commit
 
@@ -20,10 +20,10 @@ Run `pre-commit install` after setting up your local environment to enable pre-c
 
 The following hooks have been selected for this CI setup:
 
-* [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks): Some generic hooks not specific to Python.
-* [ruff](https://github.com/charliermarsh/ruff/): An extremely fast Python linter and formatter. Includes lints and formatting popularized by various other tools like `black`, `flake8` and `pyupgrade`, all in one tool. Replaces all linting and autoformatting tools except for `mypy`. Install the [VSCode](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) or [PyCharm](https://plugins.jetbrains.com/plugin/20574-ruff) extension for the best developer experience. Adjust settings in the `pyproject.toml` as desired.
-* [mypy](https://mypy.readthedocs.io/): mypy is a static type checker for Python. One of the best things you can do for your code base is add type hints and be consistent with them. In this repo, mypy is configured with [all strictness options](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict) enabled. Note that for mypy to work correctly as a pre-commit hook, **you must define your main dependencies as `additional_dependencies` in the pre-commit hook**. If you have many dependencies, it may be better to remove the mypy pre-commit hook and run mypy alongside your tests.
-
+- [pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks): Some generic hooks not specific to Python.
+- [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli): Almost all projects will include some documentation in Markdown format. This hook makes sure these files are formatted consistently. Turn specific lints on/off in the `.markdownlint.yml` file.
+- [ruff](https://github.com/charliermarsh/ruff/): An extremely fast Python linter and formatter. Includes lints and formatting popularized by various other tools like `black`, `flake8` and `pyupgrade`, all in one tool. Replaces all linting and autoformatting tools except for `mypy`. Install the [VSCode](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) or [PyCharm](https://plugins.jetbrains.com/plugin/20574-ruff) extension for the best developer experience. Adjust settings in the `pyproject.toml` as desired.
+- [mypy](https://mypy.readthedocs.io/): mypy is a static type checker for Python. One of the best things you can do for your code base is add type hints and be consistent with them. In this repo, mypy is configured with [all strictness options](https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict) enabled. Note that for mypy to work correctly as a pre-commit hook, **you must define your main dependencies as `additional_dependencies` in the pre-commit hook**. If you have many dependencies, it may be better to remove the mypy pre-commit hook and run mypy alongside your tests.
 
 ## pytest
 
@@ -33,17 +33,15 @@ pytest is extensible. I advise using [`pytest-mock`](https://pytest-mock.readthe
 
 Test coverage is calculated using the `coverage` package.
 
-
 ## Makefile
 
 The [Makefile](https://www.gnu.org/software/make/manual/make.html) is used in this repo as a collection of small useful scripts. Most notably:
 
-* `make fmt` runs autoformatting and linting
-* `make test` runs tests
-* `make coverage` runs tests and generates a coverage report
+- `make fmt` runs autoformatting and linting
+- `make test` runs tests
+- `make coverage` runs tests and generates a coverage report
 
 Simply run `make` to get an overview of available commands.
-
 
 ## Poetry
 
@@ -51,8 +49,8 @@ Simply run `make` to get an overview of available commands.
 
 Note that the dependency specification for this repository contains two [dependency groups](https://python-poetry.org/docs/master/managing-dependencies/):
 
-* `test`: Includes all testing dependencies.
-* `lint`: Includes all linting dependencies. This can be useful to help your IDE do autoformatting or show in-line linting errors.
+- `test`: Includes all testing dependencies.
+- `lint`: Includes all linting dependencies. This can be useful to help your IDE do autoformatting or show in-line linting errors.
 
 Having these development dependencies in separate groups makes it easy to install only the required dependencies in the CI workflows.
 
