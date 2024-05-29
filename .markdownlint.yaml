@@ -1,0 +1,4 @@
+default: true
+
+# line-length
+MD013: false
