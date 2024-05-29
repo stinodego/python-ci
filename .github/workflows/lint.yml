@@ -31,4 +31,4 @@ jobs:
           key: precommit-${{ hashFiles('.pre-commit-config.yaml') }}
 
       - name: Run pre-commit
-        run: pre-commit run --all-files --color=always
+        run: pre-commit run --all-files
