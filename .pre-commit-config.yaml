@@ -17,7 +17,6 @@ repos:
     rev: v0.4.6
     hooks:
       - id: ruff
-        types_or: [python, pyi]
       - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
