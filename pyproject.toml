@@ -9,7 +9,7 @@ description = ""
 authors = ["Stijn de Gooijer <stijn@degooijer.io>"]
 repository = "https://github.com/stinodego/python-cookiecutter"
 readme = "README.md"
-packages = [{ include = "mypackage", from = "src" }]
+packages = [{include = "mypackage", from = "src"}]
 
 [tool.poetry.scripts]
 mycli = 'mypackage.main:main'
@@ -37,7 +37,7 @@ fix = true
 [tool.ruff.lint]
 select = [
   "F",  # Pyflakes
-  "E",   # pycodestyle
+  "E",  # pycodestyle
   "W",  # pycodestyle
   "I",  # isort
   "D",  # pydocstyle

@@ -19,6 +19,13 @@ repos:
     hooks:
       - id: markdownlint-fix
 
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.13.0
+    hooks:
+    - id: pretty-format-toml
+      args: [--autofix, --no-sort, --trailing-commas]
+      exclude: poetry.lock
+
   - repo: https://github.com/crate-ci/typos
     rev: v1.21.0
     hooks:
