@@ -94,8 +94,7 @@ branch = true
 [tool.coverage.report]
 skip_covered = true
 show_missing = true
-exclude_lines = [
-  "pragma: no cover",
+exclude_also = [
   "if TYPE_CHECKING:",
   "if __name__ == .__main__.:",
 ]
