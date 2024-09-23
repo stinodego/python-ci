@@ -16,7 +16,7 @@ mycli = 'mypackage.main:main'
 
 [tool.poetry.dependencies]
 python = ">=3.11"
-polars = "^0.20.30"
+polars = "^1.8.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.2.1"
