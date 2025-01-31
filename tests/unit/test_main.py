@@ -1,4 +1,4 @@
-from mypackage.main import main
+from mypackage.__main__ import main
 
 
 def test_main():
