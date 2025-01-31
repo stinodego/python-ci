@@ -30,7 +30,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.uv]
-required-version = ">=0.5"
+required-version = "<0.6"
 
 [tool.ruff]
 src = ["src"]
