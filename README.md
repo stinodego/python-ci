@@ -9,7 +9,7 @@ This README includes some justification and references for the choices made in t
 - [pre-commit](#pre-commit)
 - [pytest](#pytest)
 - [Makefile](#makefile)
-- [Poetry](#poetry)
+- [uv](#uv)
 - [GitHub Actions](#github-actions)
 
 ## pre-commit
@@ -45,11 +45,11 @@ The [Makefile](https://www.gnu.org/software/make/manual/make.html) is used in th
 
 Simply run `make` to get an overview of available commands.
 
-## Poetry
+## uv
 
-[Poetry](https://python-poetry.org/) is an amazing, modern tool for developing Python packages. See my [Poetry guide](https://github.com/stinodego/poetry-guide) for pointers on using Poetry effectively.
+[uv](https://docs.astral.sh/uv/) is an amazing, modern tool for developing Python packages.
 
-Note that the dependency specification for this repository contains two [dependency groups](https://python-poetry.org/docs/master/managing-dependencies/):
+Note that the dependency specification for this repository contains two [dependency groups](https://docs.astral.sh/uv/concepts/projects/dependencies/#dependency-groups):
 
 - `test`: Includes all testing dependencies.
 - `lint`: Includes all linting dependencies. This can be useful to help your IDE do autoformatting or show in-line linting errors.
@@ -69,3 +69,7 @@ For open source repos, I recommend use the [official pre-commit CI](https://pre-
 The repo also includes a Dependabot configuration. This can help keep your Python dependencies and GitHub Actions up-to-date.
 
 Because Dependabot can get a bit spammy with its pull requests, it's configured to skip patch versions and only open pull requests once a week.
+
+> [!WARNING]
+> Dependabot does not yet support uv.
+> Support is planned for Q1 2025 and can be tracked [here](https://github.com/dependabot/dependabot-core/issues/10478).

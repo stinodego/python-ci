@@ -32,13 +32,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.uv]
-required-version = "0.5.26"
+required-version = ">=0.5,<0.6"
 default-groups = ["test", "lint"]
 
 [tool.ruff]
 src = ["src"]
 line-length = 88
-target-version = "py311"
 fix = true
 
 [tool.ruff.lint]
@@ -81,7 +80,6 @@ ban-relative-imports = "all"
 [tool.mypy]
 files = "src"
 mypy_path = "src"
-python_version = "3.11"
 strict = true
 enable_error_code = [
   "redundant-expr",
