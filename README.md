@@ -49,12 +49,9 @@ Simply run `make` to get an overview of available commands.
 
 [uv](https://docs.astral.sh/uv/) is an amazing, modern tool for developing Python packages.
 
-Note that the dependency specification for this repository contains two [dependency groups](https://docs.astral.sh/uv/concepts/projects/dependencies/#dependency-groups):
-
-- `test`: Includes all testing dependencies.
-- `lint`: Includes all linting dependencies. This can be useful to help your IDE do autoformatting or show in-line linting errors.
-
-Having these development dependencies in separate groups makes it easy to install only the required dependencies in the CI workflows.
+Note that the dependency specification for this repository contains a single `dev` [dependency group](https://docs.astral.sh/uv/concepts/projects/dependencies/#dependency-groups).
+With the speed that uv offers, it's not really required to further split this out into a `test` and `lint` group, for example.
+Furthermore, using `dev` is the default and this offers some minor integration benefits.
 
 ## GitHub Actions
 
