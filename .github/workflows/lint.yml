@@ -7,35 +7,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ruff:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: astral-sh/ruff-action@v3
-        with:
-          args: check --no-fix
-
-      - uses: astral-sh/ruff-action@v3
-        with:
-          args: format --diff
-
-  mypy:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install dependencies
-        run: uv sync
-
-      - name: Run MyPy
-        run: uv run mypy
-
   pre-commit:
     runs-on: ubuntu-24.04
     steps:
@@ -56,4 +27,4 @@ jobs:
           key: precommit-${{ hashFiles('.pre-commit-config.yaml') }}
 
       - name: Run pre-commit
-        run: SKIP="ruff,ruff-format,mypy" uv run pre-commit run --all-files
+        run: uv run pre-commit run --all-files
