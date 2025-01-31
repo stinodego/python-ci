@@ -4,16 +4,16 @@ SHELL=bash
 
 .PHONY: fmt
 fmt:  ## Run autoformatting and linting
-	@poetry run pre-commit run --all-files
+	@uv run pre-commit run --all-files
 
 .PHONY: test
 test:  ## Run tests
-	@poetry run pytest
+	@uv run pytest
 
 .PHONY: coverage
 coverage:  ## Run tests and report coverage
-	@poetry run coverage run -m pytest
-	@poetry run coverage report
+	@uv run coverage run -m pytest
+	@uv run coverage report
 
 .PHONY: clean
 clean:  ## Clean up caches and build artifacts
