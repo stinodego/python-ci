@@ -18,7 +18,7 @@ jobs:
           enable-cache: true
 
       - name: Install dependencies
-        run: uv sync --no-install-project --group lint
+        run: uv sync --only-dev
 
       - name: Cache pre-commit
         uses: actions/cache@v4
@@ -27,4 +27,4 @@ jobs:
           key: precommit-${{ hashFiles('.pre-commit-config.yaml') }}
 
       - name: Run pre-commit
-        run: make fmt
+        run: uv run pre-commit run --all-files
