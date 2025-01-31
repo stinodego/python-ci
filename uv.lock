@@ -112,30 +112,26 @@ dependencies = [
 ]
 
 [package.dev-dependencies]
-lint = [
+dev = [
+    { name = "coverage" },
     { name = "mypy" },
     { name = "pre-commit" },
-    { name = "ruff" },
-]
-test = [
-    { name = "coverage" },
     { name = "pytest" },
     { name = "pytest-mock" },
+    { name = "ruff" },
 ]
 
 [package.metadata]
 requires-dist = [{ name = "polars", specifier = ">=1.21.0" }]
 
 [package.metadata.requires-dev]
-lint = [
+dev = [
+    { name = "coverage", specifier = ">=7.6.10" },
     { name = "mypy", specifier = ">=1.14.1" },
     { name = "pre-commit", specifier = ">=4.1.0" },
-    { name = "ruff", specifier = ">=0.9.4" },
-]
-test = [
-    { name = "coverage", specifier = ">=7.6.10" },
     { name = "pytest", specifier = ">=8.3.4" },
     { name = "pytest-mock", specifier = ">=3.14.0" },
+    { name = "ruff", specifier = ">=0.9.4" },
 ]
 
 [[package]]

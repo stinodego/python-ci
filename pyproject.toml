@@ -16,14 +16,12 @@ dependencies = [
 mycli = 'mypackage.__main__:main'
 
 [dependency-groups]
-test = [
+dev = [
   "coverage>=7.6.10",
-  "pytest>=8.3.4",
-  "pytest-mock>=3.14.0",
-]
-lint = [
   "mypy>=1.14.1",
   "pre-commit>=4.1.0",
+  "pytest>=8.3.4",
+  "pytest-mock>=3.14.0",
   "ruff>=0.9.4",
 ]
 
@@ -33,7 +31,6 @@ build-backend = "hatchling.build"
 
 [tool.uv]
 required-version = ">=0.5,<0.6"
-default-groups = ["test", "lint"]
 
 [tool.ruff]
 src = ["src"]
