@@ -30,9 +30,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.uv]
-# TODO: Set to ">=0.5,<0.6" when bug is fixed
-# https://github.com/astral-sh/setup-uv/issues/264
-required-version = "<0.6"
+required-version = ">=0.6,<0.7"
 
 [tool.ruff]
 src = ["src"]
