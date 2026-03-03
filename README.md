@@ -8,7 +8,7 @@ This README includes some justification and references for the choices made in t
 
 - [pre-commit](#pre-commit)
 - [pytest](#pytest)
-- [Makefile](#makefile)
+- [just](#just)
 - [uv](#uv)
 - [GitHub Actions](#github-actions)
 
@@ -35,15 +35,15 @@ pytest is extensible. I advise using [`pytest-mock`](https://pytest-mock.readthe
 
 Test coverage is calculated using the `coverage` package.
 
-## Makefile
+## just
 
-The [Makefile](https://www.gnu.org/software/make/manual/make.html) is used in this repo as a collection of small useful scripts. Most notably:
+[just](https://just.systems/man/en/) is a handy way to save and run project-specific commands. These are stored in the `justfile`. The following commands are available in this repo:
 
-- `make fmt` runs autoformatting and linting
-- `make test` runs tests
-- `make coverage` runs tests and generates a coverage report
+- `just fmt` runs autoformatting and linting
+- `just test` runs tests
+- `just cov` runs tests and generates a coverage report
 
-Simply run `make` to get an overview of available commands.
+Run `just --list` to get an overview of available commands.
 
 ## uv
 
@@ -66,7 +66,3 @@ For open source repos, I recommend use the [official pre-commit CI](https://pre-
 The repo also includes a Dependabot configuration. This can help keep your Python dependencies and GitHub Actions up-to-date.
 
 Because Dependabot can get a bit spammy with its pull requests, it's configured to skip patch versions and only open pull requests once a week.
-
-> [!WARNING]
-> Dependabot does not yet support uv.
-> Support is planned for Q1 2025 and can be tracked [here](https://github.com/dependabot/dependabot-core/issues/10478).
