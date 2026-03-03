@@ -50,6 +50,7 @@ select = [
   "C4",  # flake8-comprehensions
   "SIM",  # flake8-simplify
   "TID",  # flake8-tidy-imports
+  "TC",  # flake8-type-checking
   "RUF",  # Ruff-specific rules
 ]
 ignore = [
@@ -70,6 +71,9 @@ convention = "google"
 
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
+
+[tool.ruff.lint.flake8-type-checking]
+strict = true
 
 [tool.mypy]
 files = "src"
