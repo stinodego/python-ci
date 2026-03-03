@@ -17,8 +17,11 @@ jobs:
         with:
           enable-cache: true
 
+      - name: Install just
+        uses: extractions/setup-just@v3
+
       - name: Install dependencies
         run: uv sync
 
       - name: Run tests and generate coverage report
-        run: make coverage
+        run: just cov
