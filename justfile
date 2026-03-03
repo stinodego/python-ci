@@ -1,3 +1,5 @@
+alias t := test
+
 # Run autoformatting and linting
 fmt:
   @uv run pre-commit run --all-files
