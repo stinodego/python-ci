@@ -7,9 +7,9 @@ authors = [
 ]
 repository = "https://github.com/stinodego/python-ci"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.14"
 dependencies = [
-  "polars>=1.21.0",
+  "polars>=1.38.1",
 ]
 
 [project.scripts]
@@ -17,12 +17,12 @@ mycli = 'mypackage.__main__:main'
 
 [dependency-groups]
 dev = [
-  "coverage>=7.6.10",
-  "mypy>=1.14.1",
-  "pre-commit>=4.1.0",
-  "pytest>=8.3.4",
-  "pytest-mock>=3.14.0",
-  "ruff>=0.9.4",
+  "coverage>=7.13.4",
+  "mypy>=1.19.1",
+  "pre-commit>=4.5.1",
+  "pytest>=9.0.2",
+  "pytest-mock>=3.15.1",
+  "ruff>=0.15.4",
 ]
 
 [build-system]
@@ -30,7 +30,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.uv]
-required-version = ">=0.6,<0.7"
+required-version = ">=0.10,<0.11"
 
 [tool.ruff]
 src = ["src"]
@@ -65,9 +65,6 @@ ignore = [
 [tool.ruff.lint.pycodestyle]
 max-doc-length = 88
 
-[tool.ruff.lint.isort]
-force-single-line = true
-
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
@@ -78,16 +75,13 @@ ban-relative-imports = "all"
 files = "src"
 mypy_path = "src"
 strict = true
-enable_error_code = [
-  "redundant-expr",
-  "truthy-bool",
-  "ignore-without-code",
-]
 
-[tool.pytest.ini_options]
+[tool.pytest]
+strict = true
 addopts = [
   "--import-mode=importlib",
 ]
+filterwarnings = ["error"]
 
 [tool.coverage.run]
 source = ["src"]
@@ -97,6 +91,5 @@ branch = true
 skip_covered = true
 show_missing = true
 exclude_also = [
-  "if TYPE_CHECKING:",
   "if __name__ == .__main__.:",
 ]
