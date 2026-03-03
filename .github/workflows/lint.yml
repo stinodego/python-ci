@@ -17,6 +17,9 @@ jobs:
         with:
           enable-cache: true
 
+      - name: Install just
+        uses: extractions/setup-just@v3
+
       - name: Install dependencies
         run: uv sync --only-dev
 
@@ -27,4 +30,4 @@ jobs:
           key: precommit-${{ hashFiles('.pre-commit-config.yaml') }}
 
       - name: Run pre-commit
-        run: uv run pre-commit run --all-files
+        run: just fmt
